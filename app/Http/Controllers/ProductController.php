@@ -13,4 +13,9 @@ class ProductController extends Controller
         return view('product.index')
             ->with('products', Product::get());
     }
+
+    public function show($id){
+        $product = Product::find($id);
+        return view('product.show',compact('product'));
+    }
 }
