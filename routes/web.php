@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CartContorller;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LineItemController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -15,10 +15,11 @@ Route::controller(ProductController::class)->group(function(){
 Route::controller(LineItemController::class)->group(function(){
     Route::name('line_item.')->group(function(){
         Route::post('/line_item/create','create')->name('create');
+        Route::post('/line_item/delete','delete')->name('delete');
     });
 });
 
-Route::controller(CartContorller::class)->group(function(){
+Route::controller(CartController::class)->group(function(){
     Route::name('cart.')->group(function(){
         Route::get('/cart','index')->name('index');
     });
