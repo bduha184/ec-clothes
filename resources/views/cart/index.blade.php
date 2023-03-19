@@ -37,7 +37,7 @@
         <div class="cart__sub-total">
             小計：￥{{ number_format($total_price) }} 円
         </div>
-        <button onClick="location.href='{{'/'}} class="cart__purchase btn btn-primary">
+        <button onClick="location.href='{{ route('cart.checkout') }}'" class="cart__purchase btn btn-primary">
             購入する
         </button>
         @else
